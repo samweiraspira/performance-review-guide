@@ -384,8 +384,7 @@
   var phases = [
     { label: 'Self reviews', start: new Date('2026-06-02'), end: new Date('2026-06-09'),  bg: '#E1F5EE', border: '#1D9E75', text: '#085041' },
     { label: 'Manager &amp; partner reviews', start: new Date('2026-06-10'), end: new Date('2026-06-15'), bg: '#EEEDFE', border: '#7F77DD', text: '#3C3489' },
-    { label: 'Review meetings &amp; OKRs', start: new Date('2026-06-18'), end: new Date('2026-07-02'), bg: '#FAEEDA', border: '#EF9F27', text: '#633806' },
-    { label: 'Salary outcomes', start: new Date('2026-07-24'), end: new Date('2026-07-31'), bg: '#FAECE7', border: '#D85A30', text: '#712B13' }
+    { label: 'Review meetings &amp; OKRs', start: new Date('2026-06-18'), end: new Date('2026-07-02'), bg: '#FAEEDA', border: '#EF9F27', text: '#633806' }
   ];
 
   var rowsEl = document.getElementById('tl-rows');
@@ -403,18 +402,7 @@
     track.className = 'tl-track';
     track.style.cssText = 'flex:1;position:relative;height:28px;';
 
-    if (i === 0) {
-      var todayPct = pct(TODAY);
-      var line = document.createElement('div');
-      line.className = 'today-marker';
-      line.style.left = todayPct + '%';
-      var tag = document.createElement('div');
-      tag.className = 'today-tag';
-      tag.style.left = todayPct + '%';
-      tag.textContent = 'Today';
-      line.appendChild(tag);
-      track.appendChild(line);
-    }
+
 
     var bar = document.createElement('div');
     bar.className = 'tl-bar';
