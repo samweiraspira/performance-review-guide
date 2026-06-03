@@ -1,1 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Access Your Performance Review — Aspira Financial</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f3; color: #1a1a1a; line-height: 1.6; }
+  .page { max-width: 760px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+  .header { display: flex; align-items: center; gap: 16px; margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #e0e0e0; }
+  .logo { width: 52px; height: 52px; border-radius: 50%; background: #0D5C63; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .logo span { color: #fff; font-weight: 600; font-size: 15px; }
+  .header-text h1 { font-size: 21px; font-weight: 600; color: #0D5C63; }
+  .header-text p { font-size: 13px; color: #666; margin-top: 2px; }
+  .timeline-section { background: #fff; border-radius: 12px; border: 1px solid #e8e8e8; padding: 1.25rem 1.5rem; margin-bottom: 2.5rem; }
+  .timeline-section h2 { font-size: 13px; font-weight: 600; color: #666; margin-bottom: 1rem; letter-spacing: 0.04em; text-transform: uppercase; }
+  .tl-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+  .tl-label { width: 160px; font-size: 12px; color: #555; text-align: right; flex-shrink: 0; line-height: 1.35; }
+  .tl-track { flex: 1; position: relative; height: 28px; }
+  .tl-bar { position: absolute; top: 0; height: 100%; border-radius: 6px; display: flex; align-items: center; justify-content: center; }
+  .tl-bar span { font-size: 11px; font-weight: 500; white-space: nowrap; padding: 0 8px; }
+  .tl-axis { display: flex; margin-left: 172px; margin-top: 8px; border-top: 1px solid #e8e8e8; padding-top: 6px; }
+  .tl-tick { flex: 1; font-size: 10px; color: #999; }
+  .tl-tick:last-child { text-align: right; }
+  .step { display: flex; gap: 20px; }
+  .step-left { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+  .step-num { width: 34px; height: 34px; border-radius: 50%; background: #0D5C63; color: #fff; font-size: 14px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .step-line { width: 2px; background: #e0e0e0; flex: 1; margin-top: 6px; min-height: 24px; }
+  .step-content { flex: 1; padding-bottom: 2rem; }
+  .step-title { font-size: 15px; font-weight: 600; color: #1a1a1a; margin-bottom: 5px; margin-top: 5px; }
+  .step-desc { font-size: 13px; color: #555; line-height: 1.65; margin-bottom: 12px; }
+  .step-desc strong { color: #1a1a1a; }
+  .tip { background: #EAF5FB; border-left: 3px solid #378ADD; border-radius: 0 8px 8px 0; padding: 10px 14px; font-size: 12px; color: #185FA5; margin-top: 10px; line-height: 1.6; }
+  .tip strong { color: #0C447C; }
+  .mockup { border: 1px solid #e0e0e0; border-radius: 12px; overflow: hidden; margin-top: 12px; background: #fff; }
+  .mock-bar { background: #1e1e2e; height: 30px; display: flex; align-items: center; padding: 0 12px; gap: 6px; }
+  .mock-dot { width: 9px; height: 9px; border-radius: 50%; }
+  .mock-url { background: #2c2c44; border-radius: 4px; height: 17px; flex: 1; margin: 0 10px; display: flex; align-items: center; padding: 0 10px; }
+  .mock-url span { font-size: 10px; color: #8888aa; }
+  .mock-body { padding: 18px; }
+  .login-card { max-width: 300px; margin: 0 auto; border: 1px solid #e0e0e0; border-radius: 12px; padding: 22px; }
+  .login-brand { text-align: center; font-size: 16px; font-weight: 600; color: #0D5C63; margin-bottom: 14px; }
+  .mock-label { font-size: 11px; color: #888; display: block; margin-bottom: 3px; margin-top: 10px; }
+  .mock-field { width: 100%; border: 1px solid #e0e0e0; border-radius: 8px; padding: 7px 10px; font-size: 12px; color: #888; background: #f9f9f9; }
+  .mock-submit { width: 100%; margin-top: 14px; background: #0D5C63; color: #fff; border: none; border-radius: 8px; padding: 9px; font-size: 13px; font-weight: 600; outline: 3px solid #0D5C63; outline-offset: 2px; }
+  .mfa-card { max-width: 340px; margin: 0 auto; }
+  .mfa-heading { font-size: 13px; font-weight: 600; color: #1a1a1a; margin-bottom: 4px; }
+  .mfa-sub { font-size: 11px; color: #888; margin-bottom: 14px; line-height: 1.5; }
+  .mfa-opt { border: 1px solid #e0e0e0; border-radius: 8px; padding: 11px 13px; margin-bottom: 8px; display: flex; align-items: center; gap: 11px; }
+  .mfa-opt.selected { border-color: #0D5C63; background: #f0faf9; }
+  .mfa-icon-box { width: 30px; height: 30px; border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 16px; }
+  .mfa-opt-label strong { font-size: 12px; font-weight: 600; color: #1a1a1a; display: block; }
+  .mfa-opt-label span { font-size: 11px; color: #888; }
+  .badge { font-size: 10px; background: #f0faf9; color: #0D5C63; border: 1px solid #0D5C63; border-radius: 4px; padding: 1px 6px; margin-left: 6px; }
+  .app-frame { display: flex; min-height: 280px; }
+  .sidebar { width: 190px; background: #fff; border-right: 1px solid #e8e8e8; padding: 10px 0; flex-shrink: 0; }
+  .sb-brand { display: flex; align-items: center; gap: 8px; padding: 6px 14px 14px; }
+  .sb-brand-circle { width: 34px; height: 34px; border-radius: 50%; background: #222; display: flex; align-items: center; justify-content: center; }
+  .sb-brand-circle span { color: #fff; font-size: 13px; font-weight: 600; }
+  .sb-item { display: flex; align-items: center; gap: 10px; padding: 8px 14px; font-size: 13px; color: #555; cursor: default; }
+  .sb-item svg { width: 18px; height: 18px; stroke: #aaa; fill: none; stroke-width: 1.8; flex-shrink: 0; }
+  .sb-item.highlight { background: #e6f7f7; border-radius: 8px; margin: 1px 8px; padding: 8px 6px; }
+  .sb-item.highlight svg { stroke: #0D5C63; }
+  .sb-item.highlight span { color: #0D5C63; font-weight: 600; }
+  .perf-badge { width: 24px; height: 24px; border-radius: 50%; background: #0D5C63; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .perf-badge svg { width: 14px; height: 14px; stroke: #fff; }
+  .app-main { flex: 1; padding: 18px; }
+  .app-main-title { font-size: 14px; font-weight: 600; color: #1a1a1a; margin-bottom: 8px; }
+  .arrow-note { display: flex; align-items: center; gap: 6px; margin-top: 14px; color: #0D5C63; font-size: 12px; font-weight: 600; }
+  .arrow-note svg { width: 16px; height: 16px; stroke: #0D5C63; fill: none; stroke-width: 2; }
+  .two-col { display: grid; grid-template-columns: 220px 1fr; gap: 16px; margin-top: 12px; align-items: start; }
+  .panel { border: 1px solid #e0e0e0; border-radius: 10px; overflow: hidden; background: #fff; }
+  .panel-header { background: #f5f5f3; padding: 8px 12px; font-size: 11px; color: #888; border-bottom: 1px solid #e0e0e0; display: flex; align-items: center; gap: 5px; }
+  .subnav-title { display: flex; align-items: center; gap: 8px; padding: 11px 14px; font-size: 13px; font-weight: 600; color: #1a1a1a; border-bottom: 1px solid #e8e8e8; }
+  .subnav-title svg { width: 14px; height: 14px; stroke: #888; fill: none; stroke-width: 2; }
+  .sub-item { padding: 10px 14px; font-size: 13px; color: #555; }
+  .sub-item.active { background: #e6f7f7; margin: 3px 6px; border-radius: 8px; padding: 10px 8px; color: #0D5C63; font-weight: 600; outline: 2px solid #0D5C63; outline-offset: 0; }
+  .perf-tabs { display: flex; border-bottom: 1px solid #e8e8e8; margin-bottom: 12px; }
+  .perf-tab { font-size: 12px; padding: 7px 13px; color: #888; border-bottom: 2px solid transparent; }
+  .perf-tab.active { color: #0D5C63; border-bottom-color: #0D5C63; font-weight: 600; }
+  .review-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+  .review-table th { text-align: left; color: #888; padding: 4px 8px; border-bottom: 1px solid #e8e8e8; font-weight: 400; }
+  .review-table td { padding: 9px 8px; border-bottom: 1px solid #e8e8e8; }
+  .cycle-link { color: #0D5C63; font-weight: 600; text-decoration: underline; }
+  .badge-current { font-size: 10px; background: #e6f7f7; color: #0D5C63; border: 1px solid #0D5C63; border-radius: 4px; padding: 1px 6px; margin-left: 5px; }
+  .footer { text-align: center; font-size: 12px; color: #aaa; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0e0e0; }
+  @media print { body { background: #fff; } .page { padding: 1rem; } }
+  @media (max-width: 540px) {
+    .two-col { grid-template-columns: 1fr; }
+    .app-frame { flex-direction: column; }
+    .sidebar { width: 100%; border-right: none; border-bottom: 1px solid #e8e8e8; }
+    .tl-label { width: 100px; font-size: 11px; }
+    .tl-axis { margin-left: 112px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
 
+  <div class="header">
+    <div class="logo"><span>AF</span></div>
+    <div class="header-text">
+      <h1>How to access your performance review</h1>
+      <p>Aspira Financial &nbsp;·&nbsp; Employment Hero &nbsp;·&nbsp; 2026 Performance Review Cycle</p>
+    </div>
+  </div>
+
+  <div class="timeline-section">
+    <h2>Review cycle timeline</h2>
+    <div id="tl-rows"></div>
+    <div class="tl-axis" id="tl-axis"></div>
+  </div>
+
+  <div class="steps">
+
+    <div class="step">
+      <div class="step-left"><div class="step-num">1</div><div class="step-line"></div></div>
+      <div class="step-content">
+        <div class="step-title">Go to Employment Hero and log in</div>
+        <div class="step-desc">Open your browser and go to <strong>app.employmenthero.com</strong>. Enter your work email address and password, then click <em>Sign in</em>.</div>
+        <div class="mockup">
+          <div class="mock-bar">
+            <div class="mock-dot" style="background:#ff5f57"></div>
+            <div class="mock-dot" style="background:#febc2e"></div>
+            <div class="mock-dot" style="background:#28c840"></div>
+            <div class="mock-url"><span>app.employmenthero.com</span></div>
+          </div>
+          <div class="mock-body">
+            <div class="login-card">
+              <div class="login-brand">Employment Hero</div>
+              <label class="mock-label">Email address</label>
+              <div class="mock-field">yourname@aspirafinancial.com.au</div>
+              <label class="mock-label">Password</label>
+              <div class="mock-field" style="letter-spacing:4px">••••••••</div>
+              <button class="mock-submit">Sign in</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-left"><div class="step-num">2</div><div class="step-line"></div></div>
+      <div class="step-content">
+        <div class="step-title">Complete two-factor authentication (2FA)</div>
+        <div class="step-desc">After signing in you'll be asked to verify your identity. Choose whichever option suits you — both are equally valid.</div>
+        <div class="mockup">
+          <div class="mock-bar">
+            <div class="mock-dot" style="background:#ff5f57"></div>
+            <div class="mock-dot" style="background:#febc2e"></div>
+            <div class="mock-dot" style="background:#28c840"></div>
+            <div class="mock-url"><span>app.employmenthero.com</span></div>
+          </div>
+          <div class="mock-body">
+            <div class="mfa-card">
+              <div class="mfa-heading">Two-factor authentication</div>
+              <div class="mfa-sub">Choose how you'd like to verify your identity each time you log in.</div>
+              <div class="mfa-opt selected">
+                <div class="mfa-icon-box" style="background:#e6f7f7">📱</div>
+                <div class="mfa-opt-label">
+                  <strong>Authenticator app <span class="badge">Recommended</span></strong>
+                  <span>Use Microsoft Authenticator to generate a 6-digit code</span>
+                </div>
+              </div>
+              <div class="mfa-opt">
+                <div class="mfa-icon-box" style="background:#f5f5f3">💬</div>
+                <div class="mfa-opt-label">
+                  <strong>SMS text message</strong>
+                  <span>Receive a one-time code sent to your mobile number</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tip">
+          <strong>Option A — Microsoft Authenticator:</strong> Open the app on your phone, find the Employment Hero entry, and enter the 6-digit code shown.<br><br>
+          <strong>Option B — SMS:</strong> Select the SMS option and a verification code will be sent to your registered mobile number. Enter it when prompted.
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-left"><div class="step-num">3</div><div class="step-line"></div></div>
+      <div class="step-content">
+        <div class="step-title">Click Performance in the left sidebar</div>
+        <div class="step-desc">Once logged in, look at the <strong>left-hand navigation bar</strong>. Click <strong>Performance</strong> — it has a teal circular icon and sits between Development and Benefits &amp; Perks.</div>
+        <div class="mockup">
+          <div class="mock-bar">
+            <div class="mock-dot" style="background:#ff5f57"></div>
+            <div class="mock-dot" style="background:#febc2e"></div>
+            <div class="mock-dot" style="background:#28c840"></div>
+            <div class="mock-url"><span>app.employmenthero.com/dashboard</span></div>
+          </div>
+          <div class="mock-body" style="padding:0">
+            <div class="app-frame">
+              <div class="sidebar">
+                <div class="sb-brand"><div class="sb-brand-circle"><span>A</span></div></div>
+                <div class="sb-item"><svg viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg><span>Home</span></div>
+                <div class="sb-item"><svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><circle cx="15" cy="7" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6h6c3.3 0 6 2.7 6 6"/></svg><span>People</span></div>
+                <div class="sb-item"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/></svg><span>Compliance</span></div>
+                <div class="sb-item"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg><span>Pay</span></div>
+                <div class="sb-item"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><span>Engagement</span></div>
+                <div class="sb-item"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>Development</span></div>
+                <div class="sb-item highlight">
+                  <div class="perf-badge"><svg viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 00-2.91-.09z"/><path d="M12 15s0-6 5-9c0 0 1 1 1 4s-2 7-8 8"/></svg></div>
+                  <span>Performance</span>
+                </div>
+                <div class="sb-item"><svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg><span>Benefits &amp; Perks</span></div>
+                <div class="sb-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg><span>Settings</span></div>
+              </div>
+              <div class="app-main">
+                <div class="app-main-title">Dashboard</div>
+                <div style="font-size:12px;color:#888;line-height:1.6">You're logged in. Click <strong style="color:#0D5C63">Performance</strong> in the sidebar to continue to your review.</div>
+                <div class="arrow-note">
+                  <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                  Click Performance here
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-left"><div class="step-num">4</div><div class="step-line"></div></div>
+      <div class="step-content">
+        <div class="step-title">Select Performance Reviews from the sub-menu</div>
+        <div class="step-desc">A sub-menu will slide open showing three options. Click <strong>Performance Reviews</strong> (the third item, highlighted in teal).</div>
+        <div class="two-col">
+          <div class="panel">
+            <div class="panel-header">Performance sub-menu</div>
+            <div class="subnav-title"><svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>Performance</div>
+            <div class="sub-item">Goals</div>
+            <div class="sub-item">360 Reviews</div>
+            <div class="sub-item active">Performance Reviews</div>
+          </div>
+          <div style="display:flex;flex-direction:column;justify-content:center;gap:8px;padding:4px 0">
+            <div style="font-size:12px;color:#555;line-height:1.65">The sub-menu expands on the left. Click <strong style="color:#0D5C63">Performance Reviews</strong> (shown highlighted) to open the reviews page.</div>
+            <div class="arrow-note">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#0D5C63" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+              Click here
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-left"><div class="step-num">5</div></div>
+      <div class="step-content">
+        <div class="step-title">Open the 2026 Performance Review Cycle</div>
+        <div class="step-desc">On the Performance Reviews page, make sure you're on the <strong>My Reviews</strong> tab. You'll see the <strong>2026 Performance Review Cycle</strong> listed as Current. Click on it to begin or continue your self-review.</div>
+        <div class="mockup">
+          <div class="mock-bar">
+            <div class="mock-dot" style="background:#ff5f57"></div>
+            <div class="mock-dot" style="background:#febc2e"></div>
+            <div class="mock-dot" style="background:#28c840"></div>
+            <div class="mock-url"><span>app.employmenthero.com/performance/reviews</span></div>
+          </div>
+          <div class="mock-body">
+            <div style="font-size:15px;font-weight:600;color:#1a1a1a;margin-bottom:12px">Performance Reviews</div>
+            <div class="perf-tabs">
+              <div class="perf-tab active">My Reviews</div>
+              <div class="perf-tab">Review Periods</div>
+              <div class="perf-tab">Review Templates</div>
+            </div>
+            <table class="review-table">
+              <thead><tr><th>Title</th><th>Start date</th><th>End date</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><span class="cycle-link">2026 Performance Review Cycle</span><span class="badge-current">Current</span></td>
+                  <td>02/06/2026</td>
+                  <td>18/06/2026</td>
+                  <td style="color:#0D5C63;font-weight:600">Active</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="arrow-note" style="margin-top:10px">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#0D5C63" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+              Click the cycle name to open your review
+            </div>
+          </div>
+        </div>
+        <div class="tip">The review deadline is <strong>18 June 2026</strong>. Your review auto-saves as you go — click <strong>Save Draft</strong> if you're not ready to submit, or <strong>Publish</strong> once all questions are answered.<br><br>If you have any trouble accessing your review, come and chat to your HR team at Aspira Financial.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">Aspira Financial &nbsp;·&nbsp; Employment Hero Performance Review Guide &nbsp;·&nbsp; 2026</div>
+</div>
+
+<script>
+(function() {
+  var START = new Date('2026-06-02');
+  var END   = new Date('2026-07-02');
+  var TOTAL = END - START;
+  function pct(d)  { return ((d - START) / TOTAL) * 100; }
+  function w(s, e) { return pct(e) - pct(s); }
+  function fmt(d)  { return d.toLocaleDateString('en-AU', { day: 'numeric', month: 'short' }); }
+  var phases = [
+    { label: 'Self reviews',                start: new Date('2026-06-02'), end: new Date('2026-06-09'), bg: '#E1F5EE', border: '#1D9E75', text: '#085041' },
+    { label: 'Manager &amp; partner reviews', start: new Date('2026-06-10'), end: new Date('2026-06-15'), bg: '#EEEDFE', border: '#7F77DD', text: '#3C3489' },
+    { label: 'Review meetings &amp; OKRs',    start: new Date('2026-06-18'), end: new Date('2026-07-02'), bg: '#FAEEDA', border: '#EF9F27', text: '#633806' }
+  ];
+  var rowsEl = document.getElementById('tl-rows');
+  phases.forEach(function(p) {
+    var row = document.createElement('div');
+    row.className = 'tl-row';
+    var lbl = document.createElement('div');
+    lbl.className = 'tl-label';
+    lbl.innerHTML = p.label;
+    row.appendChild(lbl);
+    var track = document.createElement('div');
+    track.className = 'tl-track';
+    var bar = document.createElement('div');
+    bar.className = 'tl-bar';
+    bar.style.left = pct(p.start) + '%';
+    bar.style.width = w(p.start, p.end) + '%';
+    bar.style.background = p.bg;
+    bar.style.border = '1px solid ' + p.border;
+    bar.innerHTML = '<span style="color:' + p.text + '">' + fmt(p.start) + ' – ' + fmt(p.end) + '</span>';
+    track.appendChild(bar);
+    row.appendChild(track);
+    rowsEl.appendChild(row);
+  });
+  var axisEl = document.getElementById('tl-axis');
+  ['2 Jun', '9 Jun', '15 Jun', '22 Jun', '2 Jul'].forEach(function(t) {
+    var tick = document.createElement('div');
+    tick.className = 'tl-tick';
+    tick.textContent = t;
+    axisEl.appendChild(tick);
+  });
+})();
+</script>
+</body>
+</html>
